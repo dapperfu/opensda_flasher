@@ -7,7 +7,7 @@ from pexpect.exceptions import EOF
 
 from .execlass import ExeClass
 
-class Server(BaseObj):
+class Server(ExeClass):
     """ Debug server class
     """
     @property
