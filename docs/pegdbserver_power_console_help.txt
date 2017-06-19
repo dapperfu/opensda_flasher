@@ -1,0 +1,19 @@
+-devicelist : Displays valid device name list and terminates
+-device=n : Specify the device name being debugged
+-startserver : Start the server listening for a connection from GDB
+-serverport=n : Server TCP/IP port number is n (by default 7224)
+-useexternalip : Server TCP/IP IP address is the PCs IP address (instead of localhost)
+-serverip=n : Server TCP/IP IP address is nnn.nnn.nnn.nnn
+-showhardware : Shows list of autodetected P&E debug hardware/ports
+-interface=n : Specify P&E hardware interface
+-port=n : Choose hardware number/ip/name/serialnumber n. Default is USB1
+-attachonly : Do not reset the device on connection (default OFF)
+-speed=n : Shift frequency is n KHz. Default is 5000 KHz.
+-usejtag : Sets the communication style to JTAG. (default OFF)
+-resetdelay=n : Delay n milliseconds after reset.
+-showflashstatus : Show flash programming dialog during programming
+-verbose : Displays messages of the debug and communications session
+-singlesession : GDB Server will automatically close after GDB client disconnects
+-configfile=config.ini : Specify an ini file to read settings from.
+-corenum : Sets current device core. (defaults to 0)
+-gdbmiport=n : Enables GDB/MI interface, using port number n

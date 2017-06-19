@@ -1,0 +1,11 @@
+target remote {{ host }}:{{ port }}
+
+monitor startmultiload
+
+{%- for elf in elfs %}
+load {{ elf }}
+{%- endfor %}
+
+monitor endmultiload
+monitor _reset
+quit
