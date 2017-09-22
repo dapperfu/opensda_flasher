@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
-
+"""OpenSDA GDB Client Class."""
 import os
 import sys
 import tempfile
 
-from jinja2 import Template
-
 import delegator
+from jinja2 import Template
 
 from .execlass import ExeClass
 
@@ -15,7 +14,7 @@ class Client(ExeClass):
     """Class for the GDB client that calls the flash functions."""
 
     def __init__(self, config=None):
-
+        """Init Method."""
         # Call the super's init.
         super().__init__()
         # Generate a temporary file to feed to gdb.
@@ -25,7 +24,7 @@ class Client(ExeClass):
 
     @property
     def executable(self):
-        """Executable path."""
+        """Path to client executable."""
         return os.path.join(self.config["S32"]["ROOT"],
                             "Cross_Tools",
                             self.config["CLIENT"]["PLATFORM"],
@@ -34,7 +33,7 @@ class Client(ExeClass):
 
     @property
     def cmd(self):
-        """Command list to run."""
+        """List of commands for client to run."""
         return [self.executable,
                 "--nx",
                 "--command={}".format(self.cmd_file)]
@@ -46,7 +45,7 @@ class Client(ExeClass):
 
     @property
     def template_str(self):
-        """String of the gdb command template."""
+        """GDB command template."""
         return """target remote 127.0.0.1:{{ port }}
 
 set mem inaccessible-by-default off
@@ -72,7 +71,7 @@ quit
 """
 
     def render(self, elfs):
-        """Render the Jinja2 template to the temp file"""
+        """Render the Jinja2 template to the temp file."""
         # Escape filenames for windows.
         print("DEBUG: {}".format(self.cmd_file))
         if sys.platform == "win32":

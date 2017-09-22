@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
-
+"""Module server class."""
 import os
 import sys
 
-from pexpect.exceptions import EOF
-
 import delegator
+from pexpect.exceptions import EOF
 
 from .execlass import ExeClass
 
 
 class Server(ExeClass):
-    """ Debug server class
-    """
+    """Debug server class."""
+
     @property
     def executable(self):
-        """ Executable
-        """
+        """Path to server executable."""
         return os.path.join(self.config["S32"]["ROOT"],
                             "eclipse",
                             "plugins",
@@ -26,8 +24,7 @@ class Server(ExeClass):
 
     @property
     def cmd(self):
-        """ Command list to run
-        """
+        """Command list to run."""
         return [self.executable,
                 "-startserver",
                 "-singlesession",
@@ -38,7 +35,7 @@ class Server(ExeClass):
                 "-port={}".format(self.config["SERVER"]["PORT"])]
 
     def kill(self):
-        """ Kill the server.
+        """Kill the server.
 
         If a server is already running the task will fail. Use this to kill any
         existing processes.
@@ -50,6 +47,7 @@ class Server(ExeClass):
                                      block=True)
 
     def launch(self):
+        """Launch debug server."""
         try:
             self.process = delegator.run(self.cmd, block=False)
             print("Waiting for GDB servers to complete startup ...", end="")
@@ -59,7 +57,5 @@ class Server(ExeClass):
             print("... Done")
             sys.stdout.flush()
         except EOF:
-            raise(
-                Exception(
-                    "Server exited immediately. Is another {} instance running?".format(
-                        self.executable)))
+            error="Server exited immediately. Is another {} instance running?".format(self.executable) # noqa
+            raise(Exception(error))

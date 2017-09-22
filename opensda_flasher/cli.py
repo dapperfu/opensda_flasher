@@ -3,8 +3,8 @@ Module that contains the command line app.
 
 Why does this file exist, and why not put this in __main__?
 
-  You might be tempted to import things from __main__ later, but that will cause
-  problems: the code will get executed twice:
+  You might be tempted to import things from __main__ later, but that will
+  cause problems: the code will get executed twice:
 
   - When you run `python -mnameless` python will execute
     ``__main__.py`` as a script. That means there won't be any
@@ -30,10 +30,10 @@ from .server import Server
     '--config',
     nargs=1,
     help="Configuration File",
-    default="osf.ini",
-    )
-def main(ctx, **kw_args):
-    """opensda flasher (osf) is a tool to programatically flash NXP DEVKIT-MPC57xx boards.
+    default="osf.ini")
+def main(ctx, **kw_args): # noqa
+    """opensda_flasher.
+    A tool to programatically flash NXP DEVKIT-MPC57xx boards.
     """
     if ctx.obj is None:
         ctx.obj = dict()
@@ -46,8 +46,7 @@ def main(ctx, **kw_args):
 @click.pass_context
 @click.argument('elfs', nargs=-1, type=click.Path(exists=True))
 def flash(ctx, **kw_args):
-    """ Flash specified ELF files. """
-
+    """Flash specified ELF files."""
     # Get the config parser object.
     config = ctx.obj["config_obj"]
 
@@ -83,8 +82,7 @@ def flash(ctx, **kw_args):
 @click.pass_context
 @click.argument('elfs', nargs=-1, type=click.Path(exists=True))
 def debug(ctx, **kw_args):
-    """ Debug specified ELF files in RAM """
-
+    """Debug specified ELF files in RAM."""
     # Get the config parser object.
     config = ctx.obj["config_obj"]
 

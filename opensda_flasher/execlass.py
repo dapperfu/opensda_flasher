@@ -1,29 +1,26 @@
 # -*- coding: utf-8 -*-
+"""Base class for executables."""
 
-from configparser import ConfigParser, ExtendedInterpolation
-import os
-
-from .utilities import path
+from .config import read_config
 
 
 class ExeClass(object):
-    """Base class for Server and Client classes.
+    """Base class for Server and Client exe classes.
 
     Paramemters:
         config: ConfigParser configuration object.
-
-
     """
 
     def __init__(self, config=None):
+        """Exe Class init."""
         if config is None:
-            self.config = ConfigParser(interpolation=ExtendedInterpolation())
-            self.config.read(os.path.join(path, "opensda_flasher.ini"))
+            self.config = read_config()
         else:
             self.config = config
         self.process = None
 
     def __del__(self):
+        """Exe Class destructor."""
         if self.process is not None:
             try:
                 self.process.kill()
@@ -32,11 +29,14 @@ class ExeClass(object):
 
     @property
     def executable(self):
+        """Not Implemented."""
         raise NotImplementedError
 
     @property
     def cmd(self):
+        """Not Implemented."""
         raise NotImplementedError
 
     def launch(self):
+        """Not Implemented."""
         raise NotImplementedError

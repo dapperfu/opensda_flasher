@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
+"""Module config functions."""
+
 from configparser import ConfigParser, ExtendedInterpolation
 import os
 import sys
 
 
 def read_config(local_config=None):
-    """Read Configuration File"""
+    """Read Configuration File."""
     if local_config is None:
         local_config = ""
 
@@ -22,11 +24,11 @@ def read_config(local_config=None):
 
 
 if __name__ == "__main__":
-    if len(sys.argv)>1:
+    if len(sys.argv) > 1:
         cfg = read_config(sys.argv[1])
     else:
-       cfg = read_config()
-    
+        cfg = read_config()
+
     for k, v in cfg.items():
         print(k)
         for k2, v2 in v.items():
