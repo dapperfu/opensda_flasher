@@ -7,7 +7,7 @@ with open('requirements.txt') as f:
     
 
 setup(name='opensda_flasher',
-      version='0.1.0',
+      version='0.2.0',
       description='Tool to flash DEVKIT-MPC57xx devices with OpenSDA.',
       url='https://github.com/jed-frey/opensda_flasher',
       author='Jedediah Frey',
