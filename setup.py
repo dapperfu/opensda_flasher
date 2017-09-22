@@ -3,9 +3,11 @@ from setuptools import setup
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
+    
+    
 
 setup(name='opensda_flasher',
-      version='0.1',
+      version='0.1.0',
       description='Tool to flash DEVKIT-MPC57xx devices with OpenSDA.',
       url='https://github.com/jed-frey/opensda_flasher',
       author='Jedediah Frey',
