@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
 
-import os
-
 from configparser import ConfigParser, ExtendedInterpolation
+import os
 
 from .utilities import path
 
 
 class ExeClass(object):
     """Base class for Server and Client classes.
-    
+
     Paramemters:
         config: ConfigParser configuration object.
-        
-    
+
+
     """
+
     def __init__(self, config=None):
         if config is None:
             self.config = ConfigParser(interpolation=ExtendedInterpolation())
@@ -22,21 +22,21 @@ class ExeClass(object):
         else:
             self.config = config
         self.process = None
-        
+
     def __del__(self):
         if self.process is not None:
             try:
                 self.process.kill()
-            except:
+            except BaseException:
                 pass
 
     @property
     def executable(self):
-        raise(NotImplementedError("{} not implemented".format(self.__cls__.name)))
-        
+        raise NotImplementedError
+
     @property
     def cmd(self):
-        raise(NotImplementedError("{} not implemented".format(self.__cls__.name)))
+        raise NotImplementedError
 
     def launch(self):
-        raise(NotImplementedError("{} not implemented".format(self.__cls__.name)))
+        raise NotImplementedError

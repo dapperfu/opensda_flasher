@@ -1,0 +1,6 @@
+flake8
+flake8-isort
+flake8-junit-report
+flake8-docstrings
+autopep8
+isort

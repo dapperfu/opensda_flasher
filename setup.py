@@ -15,6 +15,6 @@ setup(name='opensda_flasher',
       data_files=[],
       install_requires=requirements,
       entry_points={
-      'console_scripts': ['osf = opensda_flasher.cli:main',
-                          'opensda_flasher = opensda_flasher.cli:main'],
+          'console_scripts': ['osf = opensda_flasher.cli:main',
+                              'opensda_flasher = opensda_flasher.cli:main'],
       })
