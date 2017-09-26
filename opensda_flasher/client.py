@@ -91,7 +91,7 @@ quit
         sys.stdout.flush()
         self.process = delegator.run(self.cmd, block=False, timeout=120)
         if self.debug:
-            
+            pass
         else:
            self.process.block()
         end
