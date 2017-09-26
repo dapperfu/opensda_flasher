@@ -91,7 +91,9 @@ quit
         sys.stdout.flush()
         self.process = delegator.run(self.cmd, block=False, timeout=120)
         if self.debug:
-            
+            print("... Give it a few moments.")
+            print("There's currently no way to tell if this is working")
+            print("Press ^C to exit.")
             self.process.expect("Continuing.")
             self.process.kill()
             self.process.terminate()
