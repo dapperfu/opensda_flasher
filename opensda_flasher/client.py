@@ -94,7 +94,8 @@ quit
             print("... Give it a few moments.")
             print("There's currently no way to tell if this is working")
             print("Press ^C to exit.")
-            self.process.expect("Continuing.")
+            while 1:
+                sleep(0.5)
             self.process.kill()
             self.process.terminate()
         else:
