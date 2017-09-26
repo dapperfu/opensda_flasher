@@ -116,14 +116,13 @@ def debug(ctx, **kw_args):
 @main.command("ports")
 @click.pass_context
 def ports(ctx, *args, **kw_args):    
-    """Kill existing running servers."""
+    """Show ports found by gdbserver."""
     # Get the config parser object.
     config = ctx.obj["config_obj"]
     s = Server(config)
-    print("Killing ...", end="")
-    s.kill()
-    print("... Done")
-
+    hardware = s.ports()
+    print(hardware)
+    
 @main.command("kill")
 @click.pass_context
 def kill(ctx, *args, **kw_args):
