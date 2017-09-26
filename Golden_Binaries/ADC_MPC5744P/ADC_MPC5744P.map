@@ -1,0 +1,681 @@
+Archive member included to satisfy reference by file (symbol)
+
+c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp\libgcc.a(eabivle.o)
+                              C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o (__eabi)
+
+Allocating common symbols
+Common symbol       size              file
+
+Result              0x6               C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ResultInMv          0x6               C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .data          0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .bss           0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .fixup         0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .sbss          0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .sbss2         0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .gcc_except_table
+                0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .data          0x00000000        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .text          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .text          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000      0x5fe C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0x52 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0x16 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0x64 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000      0x1a3 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000      0x133 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0x9d C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0x10 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000      0x15b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000       0x58 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x00000000     0xb50a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .text          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000      0x5fe C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0x52 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0x16 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0x64 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000      0x1a3 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000      0x133 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0x9d C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0x10 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000      0x15b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x00000000       0x58 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .text          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_macro   0x00000000      0x5fe C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_macro   0x00000000       0x52 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_macro   0x00000000       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_macro   0x00000000       0x16 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_macro   0x00000000       0x2e C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000      0x5fe C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0x52 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0x16 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0x64 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000      0x1a3 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000      0x133 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0x9d C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0x10 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000      0x15b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000       0x58 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000     0xb50a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x00000000      0xb62 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .text          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .text.enter_STOP_mode
+                0x00000000       0x54 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000      0x5fe C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0x52 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0x16 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0x64 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000      0x1a3 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000      0x133 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0x9d C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0x10 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000      0x15b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000       0x58 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000     0xb50a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x00000000      0xb62 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .group         0x00000000        0x8 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .text          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000      0x5fe C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0x52 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0x16 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0x64 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000      0x1a3 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000      0x133 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0x9d C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0x10 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000      0x15b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_macro   0x00000000       0x58 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .text          0x00000000        0x0 C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .data          0x00000000        0x0 C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .bss           0x00000000        0x0 C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .data          0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+ .bss           0x00000000        0x0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+ .bss           0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp\libgcc.a(eabivle.o)
+ .data          0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+ .bss           0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+ .jcr           0x00000000        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+ .text          0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ .data          0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ .bss           0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ .fixup         0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ .sdata         0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ .sdata2        0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ .gcc_except_table
+                0x00000000        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash_rchw       0x00fa0000         0x00000004
+cpu0_reset_vec   0x00fa0004         0x00000004
+m_text           0x01000000         0x00200000
+m_data           0x40000000         0x00060000
+local_dmem       0x50800000         0x00010000
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+LOAD c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+LOAD C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+LOAD C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+START GROUP
+LOAD C:/projects/DEVKIT-Makefile/e200_ewl2/lib/e200z4/fp\libc99.a
+LOAD C:/projects/DEVKIT-Makefile/e200_ewl2/lib/e200z4/fp\libm.a
+LOAD c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp\libgcc.a
+LOAD C:/projects/DEVKIT-Makefile/e200_ewl2/lib/e200z4/fp\librt.a
+END GROUP
+LOAD c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+LOAD c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+                0x00000000                __HEAP_SIZE = 0x0
+                0x00001000                __STACK_SIZE = 0x1000
+                0x00060000                SRAM_SIZE = 0x60000
+                0x40000000                SRAM_BASE_ADDR = 0x40000000
+                0x00010000                LOCALDMEM_SIZE = 0x10000
+                0x50800000                LOCALDMEM_BASE_ADDR = 0x50800000
+
+.rchw           0x00fa0000        0x4
+ *(.rchw)
+ .rchw          0x00fa0000        0x4 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+                0x00fa0000                RCHW1
+
+.cpu0_reset_vector
+                0x00fa0004        0x4
+ *(.cpu0_reset_vector)
+ .cpu0_reset_vector
+                0x00fa0004        0x4 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+                0x00fa0004                RCHW2
+
+.startup        0x01000000      0x1fe
+                0x01000000                __start = .
+ *(.startup)
+ .startup       0x01000000      0x1fe C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+                0x01000000                _start
+
+.core_exceptions_table
+                0x01001000       0xf4
+                0x01001000                __IVPR_VALUE = .
+ *(.core_exceptions_table)
+ .core_exceptions_table
+                0x01001000       0xf4 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+                0x01001000                VTABLE
+                0x01001000                IVOR0_Vector
+                0x01001010                IVOR1_Vector
+                0x01001020                IVOR2_Vector
+                0x01001030                IVOR3_Vector
+                0x01001040                IVOR4_Vector
+                0x01001050                IVOR5_Vector
+                0x01001060                IVOR6_Vector
+                0x01001070                IVOR7_Vector
+                0x01001080                IVOR8_Vector
+                0x01001090                IVOR9_Vector
+                0x010010a0                IVOR10_Vector
+                0x010010b0                IVOR11_Vector
+                0x010010c0                IVOR12_Vector
+                0x010010d0                IVOR13_Vector
+                0x010010e0                IVOR14_Vector
+                0x010010f0                IVOR15_Vector
+
+.intc_vector_table
+                0x01002000      0xb78
+ *(.intc_vector_table)
+ .intc_vector_table
+                0x01002000      0xb78 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+                0x01002000                IntcIsrVectorTable
+
+.text           0x01002b80      0x7d0
+ *(.text.startup)
+ *(.text)
+ .text          0x01002b80      0x16c c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .text          0x01002cec       0x8c C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+                0x01002cec                main
+ *fill*         0x01002d78        0x8 
+ .text          0x01002d80       0x48 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+                0x01002d80                IVOR4_Handler
+ .text          0x01002dc8       0x4a c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp\libgcc.a(eabivle.o)
+                0x01002dc8                __eabi
+ *fill*         0x01002e12        0x2 
+ .text          0x01002e14       0x48 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+ *(.text.*)
+ .text.SetIVPR  0x01002e5c       0x1a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+                0x01002e5c                SetIVPR
+ *fill*         0x01002e76        0x2 
+ .text.InitINTC
+                0x01002e78       0x32 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+                0x01002e78                InitINTC
+ *fill*         0x01002eaa        0x2 
+ .text.enableIrq
+                0x01002eac       0x20 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+                0x01002eac                enableIrq
+ .text.xcptn_xmpl
+                0x01002ecc       0x34 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+                0x01002ecc                xcptn_xmpl
+ .text.ADC1_PadConfig_ChanSelect
+                0x01002f00       0x3c C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+                0x01002f00                ADC1_PadConfig_ChanSelect
+ .text.ADC1_Calibration
+                0x01002f3c       0xba C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+                0x01002f3c                ADC1_Calibration
+ *fill*         0x01002ff6        0x2 
+ .text.ADC1_Init
+                0x01002ff8       0x80 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+                0x01002ff8                ADC1_Init
+ .text.ADC1_Read_Chan
+                0x01003078       0x5e C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+                0x01003078                ADC1_Read_Chan
+ *fill*         0x010030d6        0x2 
+ .text.dummy    0x010030d8        0xc C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+                0x010030d8                dummy
+ .text.peri_clock_gating
+                0x010030e4       0x3c C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+                0x010030e4                peri_clock_gating
+ .text.LED_Config
+                0x01003120       0x68 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+                0x01003120                LED_Config
+ .text.update_LEDs
+                0x01003188       0x68 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+                0x01003188                update_LEDs
+ .text.PLL_160MHz
+                0x010031f0       0xda C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+                0x010031f0                PLL_160MHz
+ *fill*         0x010032ca        0x2 
+ .text.system160mhz
+                0x010032cc       0x46 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+                0x010032cc                system160mhz
+ *(.init)
+ *fill*         0x01003312        0x2 
+ .init          0x01003314        0xa c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+                0x01003314                __init
+ .init          0x0100331e        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .init          0x01003322        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+ .init          0x01003326        0xa c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ *(.fini)
+ .fini          0x01003330        0xa c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+                0x01003330                __fini
+ .fini          0x0100333a        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .fini          0x0100333e        0xa c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+                0x01003350                . = ALIGN (0x10)
+ *fill*         0x01003348        0x8 
+
+.glink          0x01003350        0x0
+ .glink         0x01003350        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+
+.ctors          0x01003350        0x8
+                0x01003350                __CTOR_LIST__ = .
+ *crtbegin.o(.ctors)
+ .ctors         0x01003350        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ .ctors         0x01003354        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .ctors         0x01003354        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ *(SORT(.ctors.*))
+ *(.ctors)
+ .ctors         0x01003354        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+                0x01003358                __CTOR_END__ = .
+
+.dtors          0x01003358        0x8
+                0x01003358                __DTOR_LIST__ = .
+ *crtbegin.o(.dtors)
+ .dtors         0x01003358        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ .dtors         0x0100335c        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .dtors         0x0100335c        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ *(SORT(.dtors.*))
+ *(.dtors)
+ .dtors         0x0100335c        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+                0x01003360                __DTOR_END__ = .
+
+.preinit_array  0x01003360        0x0
+                [!provide]                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                [!provide]                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x01003360        0x0
+                [!provide]                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ *(.init_array*)
+                [!provide]                PROVIDE (__init_array_end, .)
+
+.fini_array     0x01003360        0x0
+                [!provide]                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                PROVIDE (__fini_array_end, .)
+
+.rodata
+ *(.rodata)
+ *(.rodata.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+
+.eh_frame       0x01003360        0x8
+ *(.eh_frame)
+ .eh_frame      0x01003360        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+                0x01003360                __EH_FRAME_BEGIN__
+ .eh_frame      0x01003360        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .eh_frame      0x01003360        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .eh_frame      0x01003360        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+ .eh_frame      0x01003364        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+                0x01003364                __EH_FRAME_END__
+
+.data           0x40000000        0x4 load address 0x01003368
+ *(.data)
+ .data          0x40000000        0x4 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp\libgcc.a(eabivle.o)
+ *(.data.*)
+
+.jcr            0x40000004        0x0 load address 0x0100336c
+ .jcr           0x40000004        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+
+.tm_clone_table
+                0x40000004        0x0 load address 0x0100336c
+ .tm_clone_table
+                0x40000004        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .tm_clone_table
+                0x40000004        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+
+.got2           0x40000004       0x1c load address 0x0100336c
+ .got2          0x40000004       0x1c c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp\libgcc.a(eabivle.o)
+
+.sdata2         0x40000020        0x0 load address 0x01003388
+ *(.sdata2)
+ .sdata2        0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .sdata2        0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ *(.sdata2.*)
+
+.sbss2          0x40000020        0x0 load address 0x01003388
+ *(.sbss2)
+ .sbss2         0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+ *(.sbss2.*)
+
+.rela.dyn       0x40000020        0x0 load address 0x01003388
+ .rela.iplt     0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .rela.text     0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .rela.text.InitINTC
+                0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .rela.text.xcptn_xmpl
+                0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .rela.text.ADC1_Read_Chan
+                0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .rela.text.update_LEDs
+                0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .rela.cpu0_reset_vector
+                0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .rela.got2     0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+
+.sdata          0x40000020        0x0 load address 0x01003388
+ *(.sdata)
+ .sdata         0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .sdata         0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ *(.sdata.*)
+
+.bss            0x40000020       0x2c load address 0x01003388
+                0x40000020                __BSS_START = .
+ *(.sbss)
+ .sbss          0x40000020        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .sbss          0x40000020        0xc C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+                0x40000020                Result
+                0x40000026                ResultInMv
+ .sbss          0x4000002c        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+                0x4000002c                __SBSS_END__
+ *(.sbss.*)
+ *(.bss)
+ .bss           0x4000002c       0x20 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ *(.bss.*)
+ *(COMMON)
+                0x4000004c                __BSS_END = .
+
+.iplt           0x40000050        0x0 load address 0x01003388
+ .iplt          0x40000050        0x0 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+
+.stack          0x50800000     0x1004
+                0x50800000                __HEAP = .
+                [!provide]                PROVIDE (_end, .)
+                [!provide]                PROVIDE (end, .)
+                0x50800000                . = (. + __HEAP_SIZE)
+                0x50800000                __HEAP_END = .
+                0x50800000                _stack_end = .
+                0x50801000                . = (. + __STACK_SIZE)
+ *fill*         0x50800000     0x1000 
+                0x50801000                _stack_addr = .
+                0x50801000                __SP_INIT = .
+                0x50801004                . = (. + 0x4)
+ *fill*         0x50801000        0x4 
+                0x40000000                __DATA_SRAM_ADDR = ADDR (.data)
+                0x40000020                __SDATA_SRAM_ADDR = ADDR (.sdata)
+                0x00000004                __DATA_SIZE = SIZEOF (.data)
+                0x00000000                __SDATA_SIZE = SIZEOF (.sdata)
+                0x01003368                __DATA_ROM_ADDR = LOADADDR (.data)
+                0x01003388                __SDATA_ROM_ADDR = LOADADDR (.sdata)
+                0x00060000                __SRAM_SIZE = SRAM_SIZE
+                0x40000000                __SRAM_BASE_ADDR = SRAM_BASE_ADDR
+                0x00010000                __LOCAL_DMEM_SIZE = LOCALDMEM_SIZE
+                0x50800000                __LOCAL_DMEM_BASE_ADDR = LOCALDMEM_BASE_ADDR
+                0x0000002c                __BSS_SIZE = (__BSS_END - __BSS_START)
+OUTPUT(ADC_MPC5744P.elf elf32-powerpc)
+
+.PPC.EMB.apuinfo
+                0x00000000       0x18
+ .PPC.EMB.apuinfo
+                0x00000000       0x18 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrti.o
+ .PPC.EMB.apuinfo
+                0x00000018       0x18 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtbegin.o
+ .PPC.EMB.apuinfo
+                0x00000030       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .PPC.EMB.apuinfo
+                0x00000048       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .PPC.EMB.apuinfo
+                0x00000060       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .PPC.EMB.apuinfo
+                0x00000078       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .PPC.EMB.apuinfo
+                0x00000090       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .PPC.EMB.apuinfo
+                0x000000a8       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .PPC.EMB.apuinfo
+                0x000000c0       0x18 C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .PPC.EMB.apuinfo
+                0x000000d8       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+ .PPC.EMB.apuinfo
+                0x000000f0       0x18 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp\libgcc.a(eabivle.o)
+ .PPC.EMB.apuinfo
+                0x00000108       0x18 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/crtend.o
+ .PPC.EMB.apuinfo
+                0x00000120       0x18 c:/projects/devkit-makefile/powerpc-eabivle-4_9/bin/../lib/gcc/powerpc-eabivle/4.9.4/e200z4/fp/ecrtn.o
+
+.comment        0x00000000       0x8e
+ .comment       0x00000000       0x8e C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+                                 0x8f (size before relaxing)
+ .comment       0x0000008e       0x8f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .comment       0x0000008e       0x8f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .comment       0x0000008e       0x8f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .comment       0x0000008e       0x8f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .comment       0x0000008e       0x8f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .comment       0x0000008e       0x8f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+
+.debug_info     0x00000000     0xee1e
+ .debug_info    0x00000000      0x5e7 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_info    0x000005e7     0x3cc2 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_info    0x000042a9       0xb0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_info    0x00004359       0x1d C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_info    0x00004376     0x705b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_info    0x0000b3d1     0x387f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_info    0x0000ec50       0x8f C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_info    0x0000ecdf       0x90 C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .debug_info    0x0000ed6f       0xaf C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+
+.debug_abbrev   0x00000000      0x66e
+ .debug_abbrev  0x00000000      0x17b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_abbrev  0x0000017b      0x157 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_abbrev  0x000002d2       0x7a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_abbrev  0x0000034c       0x11 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_abbrev  0x0000035d      0x159 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_abbrev  0x000004b6      0x144 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_abbrev  0x000005fa       0x4c C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_abbrev  0x00000646       0x14 C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .debug_abbrev  0x0000065a       0x14 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+
+.debug_aranges  0x00000000      0x168
+ .debug_aranges
+                0x00000000       0x38 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_aranges
+                0x00000038       0x38 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_aranges
+                0x00000070       0x20 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_aranges
+                0x00000090       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_aranges
+                0x000000a8       0x38 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_aranges
+                0x000000e0       0x30 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_aranges
+                0x00000110       0x18 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_aranges
+                0x00000128       0x20 C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .debug_aranges
+                0x00000148       0x20 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+
+.debug_ranges   0x00000000       0xa8
+ .debug_ranges  0x00000000       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_ranges  0x00000028       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_ranges  0x00000050       0x10 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_ranges  0x00000060       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_ranges  0x00000088       0x20 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+
+.debug_macro    0x00000000     0xd247
+ .debug_macro   0x00000000       0xd1 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x000000d1      0x5fe C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x000006cf       0x52 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x00000721       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x000007c1       0x16 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x000007d7       0x64 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x0000083b      0x1a3 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x000009de      0x133 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x00000b11       0x9d C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x00000bae       0x10 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x00000bbe      0x15b C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x00000d19       0x28 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x00000d41       0x58 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x00000d99     0xb50a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x0000c2a3       0x2e C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_macro   0x0000c2d1       0xcb C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x0000c39c      0xb62 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_macro   0x0000cefe       0xa1 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_macro   0x0000cf9f       0x41 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_macro   0x0000cfe0       0xdb C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_macro   0x0000d0bb       0xbb C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_macro   0x0000d176       0xd1 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+
+.debug_line     0x00000000     0x1059
+ .debug_line    0x00000000      0x27a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_line    0x0000027a      0x265 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_line    0x000004df      0x217 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_line    0x000006f6      0x123 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+ .debug_line    0x00000819      0x28a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_line    0x00000aa3      0x25a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+ .debug_line    0x00000cfd      0x1ea C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+ .debug_line    0x00000ee7       0xdf C:/projects/DEVKIT-Makefile/MPC5744P/startup.o
+ .debug_line    0x00000fc6       0x93 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_sw_handlers.o
+
+.debug_str      0x00000000    0x3bf01
+ .debug_str     0x00000000    0x3761a C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+                              0x376b8 (size before relaxing)
+ .debug_str     0x0003761a     0x2af2 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+                              0x39eb6 (size before relaxing)
+ .debug_str     0x0003a10c       0x67 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+                               0x3a5c (size before relaxing)
+ .debug_str     0x0003a173       0xab C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/Vector.o
+                               0x24a3 (size before relaxing)
+ .debug_str     0x0003a21e     0x195c C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+                              0x3b770 (size before relaxing)
+ .debug_str     0x0003bb7a      0x270 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o
+                              0x39df6 (size before relaxing)
+ .debug_str     0x0003bdea      0x117 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/flashrchw.o
+                               0x3af0 (size before relaxing)
+
+.debug_frame    0x00000000      0x280
+ .debug_frame   0x00000000       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/MPC57xx__Interrupt_Init.o
+ .debug_frame   0x000000a0       0xa0 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/adc.o
+ .debug_frame   0x00000140       0x2c C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/intc_SW_mode_isr_vectors_MPC5744P.o
+ .debug_frame   0x0000016c       0x98 C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/main.o
+ .debug_frame   0x00000204       0x7c C:/Projects/opensda_flasher/Golden_Binaries/ADC_MPC5744P/src/mode_entry.o

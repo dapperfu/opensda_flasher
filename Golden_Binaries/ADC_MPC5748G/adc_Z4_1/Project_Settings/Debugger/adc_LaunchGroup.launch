@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.cdt.launch.launchGroup">
+<stringAttribute key="org.eclipse.cdt.launch.PROGRAM_NAME" value=""/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.0.action" value="NONE"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.0.enabled" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.0.mode" value="debug"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.0.name" value="adc_Z4_1_Debug"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.1.action" value="NONE"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.1.enabled" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.1.mode" value="debug"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.1.name" value="adc_Z4_2_Debug"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.2.action" value="NONE"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.2.enabled" value="true"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.2.mode" value="debug"/>
+<stringAttribute key="org.eclipse.cdt.launch.launchGroup.2.name" value="adc_Z2_3_Debug"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS"/>
+<listAttribute key="org.eclipse.debug.ui.favoriteGroups">
+<listEntry value="org.eclipse.debug.ui.launchGroup.debug"/>
+</listAttribute>
+</launchConfiguration>

@@ -1,0 +1,16 @@
+core=MPC5744P_Z4_1
+coreType=MPC5744P_Z4
+eclipse.preferences.version=1
+flashSize=200000
+flashStart=1000000
+fpu=None
+groupName=
+io=
+language=c
+library=ewl_c9x
+pinSet=
+processor=MPC5744P
+productVersion=v1.1 b160520 
+ramSize=60000
+ramStart=40000000
+toolchainVersion=
