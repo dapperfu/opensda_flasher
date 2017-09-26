@@ -90,8 +90,11 @@ quit
         print("Waiting for GDB client to flash ...", end="")
         sys.stdout.flush()
         self.process = delegator.run(self.cmd, block=False, timeout=120)
-        
-        
+        if self.debug:
+            
+        else:
+           self.process.block()
+        end
         print("... Done")
         sys.stdout.flush()
         print(self.process.err)
