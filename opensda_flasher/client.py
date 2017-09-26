@@ -91,10 +91,11 @@ quit
         sys.stdout.flush()
         self.process = delegator.run(self.cmd, block=False, timeout=120)
         if self.debug:
-            pass
+            self.process.expect("Continuing.")
+            self.process.kill()
+            self.process.terminate()
         else:
            self.process.block()
-        end
         print("... Done")
         sys.stdout.flush()
         print(self.process.err)
