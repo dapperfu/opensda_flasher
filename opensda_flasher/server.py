@@ -39,10 +39,9 @@ class Server(ExeClass):
         self.process = delegator.run([self.executable,
                                       "-showhardware"],
                                      block=True)
-        hardware
+        hardware = self.process.split("Done.")[-1]
+        return hardware.strip()
         
-        print(proc.out.split('Done.')[-1].strip())
-
     def kill(self):
         """Kill the server.
 

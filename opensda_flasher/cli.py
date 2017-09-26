@@ -113,9 +113,18 @@ def debug(ctx, **kw_args):
 
     s.kill()
 
+@main.command("ports")
+@click.pass_context
+def ports(ctx, *args, **kw_args):    
+    """Kill existing running servers."""
+    # Get the config parser object.
+    config = ctx.obj["config_obj"]
+    s = Server(config)
+    print("Killing ...", end="")
+    s.kill()
+    print("... Done")
 
 @main.command("kill")
-@click.pass_context
 @click.pass_context
 def kill(ctx, *args, **kw_args):
     """Kill existing running servers."""
