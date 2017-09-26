@@ -54,7 +54,6 @@ set tcp connect-timeout 240
 set remotetimeout 60
 
 monitor preserve1 0
-monitor selectcore 0
 
 set architecture powerpc:vle
 
