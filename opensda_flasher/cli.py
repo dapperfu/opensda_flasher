@@ -31,7 +31,7 @@ from .server import Server
     nargs=1,
     help="Configuration File",
     default="osf.ini")
-def main(ctx, **kw_args): # noqa
+def main(ctx, **kw_args):  # noqa
     """opensda_flasher.
     A tool to programatically flash NXP DEVKIT-MPC57xx boards.
     """
@@ -77,6 +77,7 @@ def flash(ctx, **kw_args):
 
     s.kill()
 
+
 @main.command("debug")
 @click.pass_context
 @click.argument('elfs', nargs=-1, type=click.Path(exists=True))
@@ -112,16 +113,18 @@ def debug(ctx, **kw_args):
 
     s.kill()
 
+
 @main.command("ports")
 @click.pass_context
-def ports(ctx, *args, **kw_args):    
+def ports(ctx, *args, **kw_args):
     """Show ports found by gdbserver."""
     # Get the config parser object.
     config = ctx.obj["config_obj"]
     s = Server(config)
     hardware = s.ports()
     print(hardware)
-    
+
+
 @main.command("kill")
 @click.pass_context
 def kill(ctx, *args, **kw_args):

@@ -3,8 +3,7 @@ from setuptools import setup
 
 with open('requirements.txt') as f:
     requirements = f.read().splitlines()
-    
-    
+
 
 setup(name='opensda_flasher',
       version='0.2.0',

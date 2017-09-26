@@ -100,7 +100,7 @@ quit
             self.process.kill()
             self.process.terminate()
         else:
-           self.process.block()
+            self.process.block()
         print("... Done")
         sys.stdout.flush()
         print(self.process.err)

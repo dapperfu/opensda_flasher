@@ -41,7 +41,7 @@ class Server(ExeClass):
                                      block=True)
         hardware = self.process.out.split("Done.")[-1]
         return hardware.strip()
-        
+
     def kill(self):
         """Kill the server.
 
@@ -65,5 +65,5 @@ class Server(ExeClass):
             print("... Done")
             sys.stdout.flush()
         except EOF:
-            error="Server exited immediately. Is another {} instance running?".format(self.executable) # noqa
+            error = "Server exited immediately. Is another {} instance running?".format(self.executable)  # noqa
             raise(Exception(error))
