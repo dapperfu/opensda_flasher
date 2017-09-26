@@ -89,7 +89,9 @@ quit
         self.render(elfs)
         print("Waiting for GDB client to flash ...", end="")
         sys.stdout.flush()
-        self.process = delegator.run(self.cmd, block=False)
+        self.process = delegator.run(self.cmd, block=False, timeout=120)
+        
+        
         print("... Done")
         sys.stdout.flush()
         print(self.process.err)
