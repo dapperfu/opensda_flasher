@@ -77,7 +77,6 @@ def flash(ctx, **kw_args):
 
     s.kill()
 
-
 @main.command("debug")
 @click.pass_context
 @click.argument('elfs', nargs=-1, type=click.Path(exists=True))
