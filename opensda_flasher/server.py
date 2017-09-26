@@ -34,6 +34,15 @@ class Server(ExeClass):
                 "-speed={}".format(self.config["SERVER"]["SPEED"]),
                 "-port={}".format(self.config["SERVER"]["PORT"])]
 
+    def ports(self):
+        """Print available ports."""
+        self.process = delegator.run([self.executable,
+                                      "-showhardware"],
+                                     block=True)
+        hardware
+        
+        print(proc.out.split('Done.')[-1].strip())
+
     def kill(self):
         """Kill the server.
 
