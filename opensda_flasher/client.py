@@ -3,6 +3,7 @@
 import os
 import sys
 import tempfile
+from time import sleep
 
 import delegator
 from jinja2 import Template
@@ -90,6 +91,7 @@ quit
         sys.stdout.flush()
         self.process = delegator.run(self.cmd, block=False, timeout=120)
         if self.debug:
+            
             self.process.expect("Continuing.")
             self.process.kill()
             self.process.terminate()
