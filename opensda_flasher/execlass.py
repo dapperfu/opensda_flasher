@@ -1,10 +1,8 @@
-# -*- coding: utf-8 -*-
 """Base class for executables."""
-
 from .config import read_config
 
 
-class ExeClass(object):
+class ExeClass:
     """Base class for Server and Client exe classes.
 
     Paramemters:

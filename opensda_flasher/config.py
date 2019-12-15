@@ -1,9 +1,8 @@
-# -*- coding: utf-8 -*-
 """Module config functions."""
-
-from configparser import ConfigParser, ExtendedInterpolation
 import os
 import sys
+from configparser import ConfigParser
+from configparser import ExtendedInterpolation
 
 
 def read_config(local_config=None):
@@ -32,4 +31,4 @@ if __name__ == "__main__":
     for k, v in cfg.items():
         print(k)
         for k2, v2 in v.items():
-            print("\t{}: {}".format(k2, v2))
+            print(f"\t{k2}: {v2}")

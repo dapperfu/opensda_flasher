@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """Module server class."""
 import os
 import sys
@@ -15,30 +14,16 @@ class Server(ExeClass):
     @property
     def executable(self):
         """Path to server executable."""
-        return os.path.join(self.config["S32"]["ROOT"],
-                            "eclipse",
-                            "plugins",
-                            self.config["SERVER"]["PLUGIN"],
-                            self.config["SERVER"]["platform"],
-                            self.config["SERVER"]["EXE"])
+        return os.path.join(self.config["S32"]["ROOT"], "eclipse", "plugins", self.config["SERVER"]["PLUGIN"], self.config["SERVER"]["platform"], self.config["SERVER"]["EXE"])
 
     @property
     def cmd(self):
         """Command list to run."""
-        return [self.executable,
-                "-startserver",
-                "-singlesession",
-                "-interface=OPENSDA",
-                "-device={}".format(self.config["SERVER"]["DEVICE"]),
-                "-serverport={}".format(self.config["SERVER"]["SERVERPORT"]),
-                "-speed={}".format(self.config["SERVER"]["SPEED"]),
-                "-port={}".format(self.config["SERVER"]["PORT"])]
+        return [self.executable, "-startserver", "-singlesession", "-interface=OPENSDA", "-device={}".format(self.config["SERVER"]["DEVICE"]), "-serverport={}".format(self.config["SERVER"]["SERVERPORT"]), "-speed={}".format(self.config["SERVER"]["SPEED"]), "-port={}".format(self.config["SERVER"]["PORT"])]
 
     def ports(self):
         """Print available ports."""
-        self.process = delegator.run([self.executable,
-                                      "-showhardware"],
-                                     block=True)
+        self.process = delegator.run([self.executable, "-showhardware"], block=True)
         hardware = self.process.out.split("Done.")[-1]
         return hardware.strip()
 
@@ -48,11 +33,7 @@ class Server(ExeClass):
         If a server is already running the task will fail. Use this to kill any
         existing processes.
         """
-        self.process = delegator.run(["taskkill",
-                                      "/f",
-                                      "/im",
-                                      os.path.basename(self.executable)],
-                                     block=True)
+        self.process = delegator.run(["taskkill", "/f", "/im", os.path.basename(self.executable)], block=True)
 
     def launch(self):
         """Launch debug server."""
@@ -65,5 +46,5 @@ class Server(ExeClass):
             print("... Done")
             sys.stdout.flush()
         except EOF:
-            error = "Server exited immediately. Is another {} instance running?".format(self.executable)  # noqa
-            raise(Exception(error))
+            error = f"Server exited immediately. Is another {self.executable} instance running?"  # noqa
+            raise (Exception(error))

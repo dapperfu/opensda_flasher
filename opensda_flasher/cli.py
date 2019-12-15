@@ -25,12 +25,7 @@ from .server import Server
 
 @click.group(invoke_without_command=False, no_args_is_help=True)
 @click.pass_context
-@click.option(
-    '-c',
-    '--config',
-    nargs=1,
-    help="Configuration File",
-    default="osf.ini")
+@click.option("-c", "--config", nargs=1, help="Configuration File", default="osf.ini")
 def main(ctx, **kw_args):  # noqa
     """opensda_flasher.
     A tool to programatically flash NXP DEVKIT-MPC57xx boards.
@@ -44,22 +39,21 @@ def main(ctx, **kw_args):  # noqa
 
 @main.command("flash")
 @click.pass_context
-@click.argument('elfs', nargs=-1, type=click.Path(exists=True))
+@click.argument("elfs", nargs=-1, type=click.Path(exists=True))
 def flash(ctx, **kw_args):
     """Flash specified ELF files."""
     # Get the config parser object.
     config = ctx.obj["config_obj"]
 
-    if len(kw_args["elfs"]) == 0 and \
-       ("FLASH" not in config or len(config["FLASH"].values()) == 0):
-        raise(Exception("No elf(s) specified in call or config file"))
+    if len(kw_args["elfs"]) == 0 and ("FLASH" not in config or len(config["FLASH"].values()) == 0):
+        raise (Exception("No elf(s) specified in call or config file"))
 
     if len(kw_args["elfs"]) > 0:
         elfs = kw_args["elfs"]
     elif len(config["FLASH"].values()) > 0:
         elfs = list(config["FLASH"].values())
     else:
-        raise(Exception("No elf(s) specified in call or config file"))
+        raise (Exception("No elf(s) specified in call or config file"))
 
     if ctx.obj["config"] is None:
         config_dir = os.path.abspath(os.curdir)
@@ -80,22 +74,21 @@ def flash(ctx, **kw_args):
 
 @main.command("debug")
 @click.pass_context
-@click.argument('elfs', nargs=-1, type=click.Path(exists=True))
+@click.argument("elfs", nargs=-1, type=click.Path(exists=True))
 def debug(ctx, **kw_args):
     """Debug specified ELF files in RAM."""
     # Get the config parser object.
     config = ctx.obj["config_obj"]
 
-    if len(kw_args["elfs"]) == 0 and \
-       ("FLASH" not in config or len(config["FLASH"].values()) == 0):
-        raise(Exception("No elf(s) specified in call or config file"))
+    if len(kw_args["elfs"]) == 0 and ("FLASH" not in config or len(config["FLASH"].values()) == 0):
+        raise (Exception("No elf(s) specified in call or config file"))
 
     if len(kw_args["elfs"]) > 0:
         elfs = kw_args["elfs"]
     elif len(config["FLASH"].values()) > 0:
         elfs = list(config["FLASH"].values())
     else:
-        raise(Exception("No elf(s) specified in call or config file"))
+        raise (Exception("No elf(s) specified in call or config file"))
 
     if ctx.obj["config"] is None:
         config_dir = os.path.abspath(os.curdir)
@@ -137,9 +130,9 @@ def kill(ctx, *args, **kw_args):
     print("... Done")
 
 
-@main.command('init')
+@main.command("init")
 @click.pass_context
-@click.argument('elfs', nargs=-1, type=click.Path(exists=True))
+@click.argument("elfs", nargs=-1, type=click.Path(exists=True))
 def init(ctx, *args, **kw_args):
     """Initialize an empty config file."""
     # Get the config parser object.
@@ -153,9 +146,9 @@ def init(ctx, *args, **kw_args):
         # Loop through each of the given ELF files and add them to the flash
         # section.
         for idx, elf in enumerate(kw_args["elfs"]):
-            print("Adding elf {} to ini.".format(elf))
+            print(f"Adding elf {elf} to ini.")
             # The config key is unimportant, just the values.
-            config["FLASH"]["elf{}".format(idx)] = elf
+            config["FLASH"][f"elf{idx}"] = elf
     # Write the config.
     with open(ctx.obj["config"], "w") as fid:
         config.write(fid)

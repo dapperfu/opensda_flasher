@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """OpenSDA GDB Client Class."""
 import os
 import sys
@@ -26,18 +25,12 @@ class Client(ExeClass):
     @property
     def executable(self):
         """Path to client executable."""
-        return os.path.join(self.config["S32"]["ROOT"],
-                            "Cross_Tools",
-                            self.config["CLIENT"]["PLATFORM"],
-                            "bin",
-                            self.config["CLIENT"]["EXE"])
+        return os.path.join(self.config["S32"]["ROOT"], "Cross_Tools", self.config["CLIENT"]["PLATFORM"], "bin", self.config["CLIENT"]["EXE"])
 
     @property
     def cmd(self):
         """List of commands for client to run."""
-        return [self.executable,
-                "--nx",
-                "--command={}".format(self.cmd_file)]
+        return [self.executable, "--nx", f"--command={self.cmd_file}"]
 
     @property
     def template(self):
@@ -73,16 +66,11 @@ quit
     def render(self, elfs):
         """Render the Jinja2 template to the temp file."""
         # Escape filenames for windows.
-        print("DEBUG: {}".format(self.cmd_file))
+        print(f"DEBUG: {self.cmd_file}")
         if sys.platform == "win32":
             elfs = [elf.replace("\\", "\\\\") for elf in elfs]
         with open(self.cmd_file, "w") as fid:
-            print(
-                self.template.render(
-                    port=self.config["SERVER"]["SERVERPORT"],
-                    debug=self.debug,
-                    elfs=elfs),
-                file=fid)
+            print(self.template.render(port=self.config["SERVER"]["SERVERPORT"], debug=self.debug, elfs=elfs), file=fid)
 
     def flash(self, elfs):
         """Run the flash command."""
