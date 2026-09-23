@@ -1,154 +1,196 @@
-"""
-Module that contains the command line app.
+"""Click command-line interface."""
 
-Why does this file exist, and why not put this in __main__?
+from __future__ import annotations
 
-  You might be tempted to import things from __main__ later, but that will
-  cause problems: the code will get executed twice:
-
-  - When you run `python -mnameless` python will execute
-    ``__main__.py`` as a script. That means there won't be any
-    ``nameless.__main__`` in ``sys.modules``.
-  - When you import __main__ it will get executed again (as a module) because
-    there's no ``nameless.__main__`` in ``sys.modules``.
-
-  Also see (1) from http://click.pocoo.org/5/setuptools/#setuptools-integration
-"""
-import os
+from collections.abc import Callable, Sequence
+from pathlib import Path
+from subprocess import TimeoutExpired
+from typing import TypeVar
 
 import click
 
-from .client import Client
-from .config import read_config
-from .server import Server
+from opensda_flasher import __version__
+from opensda_flasher.bundle import build_tools_zip
+from opensda_flasher.client import Client, FlashError
+from opensda_flasher.config import ToolNotFound, read_config, resolve_gdb, resolve_server
+from opensda_flasher.progress import parse_boards
+from opensda_flasher.server import Server, ServerLaunchError
+
+T = TypeVar("T")
+
+
+def _click_call(func: Callable[..., T], *args: object, **kwargs: object) -> T:
+    try:
+        return func(*args, **kwargs)
+    except (ToolNotFound, ServerLaunchError, TimeoutExpired, FlashError) as exc:
+        raise click.ClickException(str(exc)) from exc
+
+
+def _resolve_elfs(ctx: click.Context, elfs: Sequence[str]) -> list[str]:
+    config = ctx.obj["config_obj"]
+    if elfs:
+        return [str(Path(elf).resolve()) for elf in elfs]
+    flash = config["FLASH"] if "FLASH" in config else {}
+    values = [value for value in flash.values() if value]
+    if not values:
+        raise click.UsageError("No elf(s) specified in call or config file")
+    config_dir = Path(ctx.obj["config"]).parent if ctx.obj["config"] else Path.cwd()
+    resolved: list[str] = []
+    for elf in values:
+        path = Path(elf)
+        resolved.append(str(path if path.is_absolute() else (config_dir / path).resolve()))
+    return resolved
+
+
+def _server(ctx: click.Context) -> Server:
+    return Server(ctx.obj["config_obj"], executable=ctx.obj["sd32"])
+
+
+def _client(ctx: click.Context) -> Client:
+    return Client(ctx.obj["config_obj"], executable=ctx.obj["gdb"])
 
 
 @click.group(invoke_without_command=False, no_args_is_help=True)
 @click.pass_context
-@click.option("-c", "--config", nargs=1, help="Configuration File", default="osf.ini")
-def main(ctx, **kw_args):  # noqa
+@click.option(
+    "-c",
+    "--config",
+    type=click.Path(path_type=Path),
+    default=Path("osf.ini"),
+    show_default=True,
+    help="Configuration file",
+)
+@click.option(
+    "--sd32",
+    type=click.Path(exists=True, path_type=Path),
+    default=None,
+    help="Path to pegdbserver_power_console, or a directory that contains it. If omitted, the tool is taken from PATH.",
+)
+@click.option(
+    "--gdb",
+    type=click.Path(exists=True, path_type=Path),
+    default=None,
+    help="Path to powerpc-eabivle-gdb, or a directory that contains it. If omitted, the tool is taken from PATH.",
+)
+def main(ctx: click.Context, config: Path, sd32: Path | None, gdb: Path | None) -> None:
     """opensda_flasher.
-    A tool to programatically flash NXP DEVKIT-MPC57xx boards.
+    A tool to programmatically flash NXP DEVKIT-MPC57xx boards.
     """
-    if ctx.obj is None:
-        ctx.obj = dict()
-    ctx.obj["config"] = os.path.abspath(kw_args["config"])
-    # Read the configuration file into a config object.
-    ctx.obj["config_obj"] = read_config(kw_args["config"])
+    ctx.ensure_object(dict)
+    ctx.obj["config"] = config.resolve()
+    ctx.obj["config_obj"] = read_config(config)
+    ctx.obj["sd32"] = sd32
+    ctx.obj["gdb"] = gdb
+    if sd32:
+        if "SERVER" not in ctx.obj["config_obj"]:
+            ctx.obj["config_obj"]["SERVER"] = {}
+        ctx.obj["config_obj"]["SERVER"]["path"] = str(sd32.resolve())
+    if gdb:
+        if "CLIENT" not in ctx.obj["config_obj"]:
+            ctx.obj["config_obj"]["CLIENT"] = {}
+        ctx.obj["config_obj"]["CLIENT"]["path"] = str(gdb.resolve())
 
 
 @main.command("flash")
 @click.pass_context
-@click.argument("elfs", nargs=-1, type=click.Path(exists=True))
-def flash(ctx, **kw_args):
+@click.argument("elfs", nargs=-1, type=click.Path(exists=True, path_type=Path))
+def flash(ctx: click.Context, elfs: tuple[Path, ...]) -> None:
     """Flash specified ELF files."""
-    # Get the config parser object.
-    config = ctx.obj["config_obj"]
-
-    if len(kw_args["elfs"]) == 0 and ("FLASH" not in config or len(config["FLASH"].values()) == 0):
-        raise (Exception("No elf(s) specified in call or config file"))
-
-    if len(kw_args["elfs"]) > 0:
-        elfs = kw_args["elfs"]
-    elif len(config["FLASH"].values()) > 0:
-        elfs = list(config["FLASH"].values())
-    else:
-        raise (Exception("No elf(s) specified in call or config file"))
-
-    if ctx.obj["config"] is None:
-        config_dir = os.path.abspath(os.curdir)
-    else:
-        config_dir = os.path.dirname(ctx.obj["config"])
-    # Convert path to absolute relative to the config file.
-    elfs = [os.path.join(config_dir, elf) for elf in elfs]
-
-    s = Server(config)
-    s.launch()
-
-    c = Client(config)
-    c.debug = False
-    c.flash(elfs)
-
-    s.kill()
+    resolved = _resolve_elfs(ctx, [str(elf) for elf in elfs])
+    server = _server(ctx)
+    boards = parse_boards(_click_call(server.ports))
+    if not boards:
+        raise click.ClickException("No OpenSDA board found. Check the USB connection.")
+    for board in boards:
+        click.echo(f"Found board: {board}")
+    _click_call(server.launch)
+    try:
+        client = _client(ctx)
+        client.debug = False
+        _click_call(client.flash, resolved, server.lines)
+    finally:
+        server.kill()
 
 
 @main.command("debug")
 @click.pass_context
-@click.argument("elfs", nargs=-1, type=click.Path(exists=True))
-def debug(ctx, **kw_args):
+@click.argument("elfs", nargs=-1, type=click.Path(exists=True, path_type=Path))
+def debug(ctx: click.Context, elfs: tuple[Path, ...]) -> None:
     """Debug specified ELF files in RAM."""
-    # Get the config parser object.
-    config = ctx.obj["config_obj"]
-
-    if len(kw_args["elfs"]) == 0 and ("FLASH" not in config or len(config["FLASH"].values()) == 0):
-        raise (Exception("No elf(s) specified in call or config file"))
-
-    if len(kw_args["elfs"]) > 0:
-        elfs = kw_args["elfs"]
-    elif len(config["FLASH"].values()) > 0:
-        elfs = list(config["FLASH"].values())
-    else:
-        raise (Exception("No elf(s) specified in call or config file"))
-
-    if ctx.obj["config"] is None:
-        config_dir = os.path.abspath(os.curdir)
-    else:
-        config_dir = os.path.dirname(ctx.obj["config"])
-    # Convert path to absolute relative to the config file.
-    elfs = [os.path.join(config_dir, elf) for elf in elfs]
-
-    s = Server(config)
-    s.launch()
-
-    c = Client(config)
-    c.debug = True
-    c.flash(elfs)
-
-    s.kill()
+    resolved = _resolve_elfs(ctx, [str(elf) for elf in elfs])
+    server = _server(ctx)
+    _click_call(server.launch)
+    try:
+        client = _client(ctx)
+        client.debug = True
+        _click_call(client.flash, resolved)
+    finally:
+        server.kill()
 
 
 @main.command("ports")
 @click.pass_context
-def ports(ctx, *args, **kw_args):
+def ports(ctx: click.Context) -> None:
     """Show ports found by gdbserver."""
-    # Get the config parser object.
-    config = ctx.obj["config_obj"]
-    s = Server(config)
-    hardware = s.ports()
-    print(hardware)
+    click.echo(_click_call(_server(ctx).ports))
+
+
+@main.command("devices")
+@click.pass_context
+def devices(ctx: click.Context) -> None:
+    """Show devices reported by gdbserver."""
+    click.echo(_click_call(_server(ctx).devices))
 
 
 @main.command("kill")
 @click.pass_context
-def kill(ctx, *args, **kw_args):
+def kill(ctx: click.Context) -> None:
     """Kill existing running servers."""
-    # Get the config parser object.
+    click.echo("Killing ...", nl=False)
+    _server(ctx).kill()
+    click.echo("... Done")
+
+
+@main.command("package")
+@click.pass_context
+@click.option(
+    "-o",
+    "--output",
+    type=click.Path(path_type=Path),
+    default=None,
+    help="Zip file to write. Default: dist/opensda-flasher-tools-<version>.zip",
+)
+def package(ctx: click.Context, output: Path | None) -> None:
+    """Zip pegdbserver, GDB, and flash algorithms for distribution."""
     config = ctx.obj["config_obj"]
-    s = Server(config)
-    print("Killing ...", end="")
-    s.kill()
-    print("... Done")
+    server_exe = _click_call(resolve_server, config, ctx.obj["sd32"])
+    gdb_exe = _click_call(resolve_gdb, config, ctx.obj["gdb"])
+    dest = output or Path("dist") / f"opensda-flasher-tools-{__version__}.zip"
+    try:
+        written = build_tools_zip(dest, server_exe, gdb_exe)
+    except OSError as exc:
+        raise click.ClickException(str(exc)) from exc
+    click.echo(f"Wrote {written}")
 
 
 @main.command("init")
 @click.pass_context
-@click.argument("elfs", nargs=-1, type=click.Path(exists=True))
-def init(ctx, *args, **kw_args):
+@click.argument("elfs", nargs=-1, type=click.Path(exists=True, path_type=Path))
+def init(ctx: click.Context, elfs: tuple[Path, ...]) -> None:
     """Initialize an empty config file."""
-    # Get the config parser object.
     config = ctx.obj["config_obj"]
-
-    # If elf(s) are passed in.
-    if len(kw_args["elfs"]) > 0:
-        # Add a flash section if it doesn't exist,
-        # empty it if it does.
-        config["FLASH"] = dict()
-        # Loop through each of the given ELF files and add them to the flash
-        # section.
-        for idx, elf in enumerate(kw_args["elfs"]):
-            print(f"Adding elf {elf} to ini.")
-            # The config key is unimportant, just the values.
-            config["FLASH"][f"elf{idx}"] = elf
-    # Write the config.
-    with open(ctx.obj["config"], "w") as fid:
+    if elfs:
+        config["FLASH"] = {}
+        for idx, elf in enumerate(elfs):
+            click.echo(f"Adding elf {elf} to ini.")
+            config["FLASH"][f"elf{idx}"] = str(elf)
+    if ctx.obj["sd32"]:
+        if "SERVER" not in config:
+            config["SERVER"] = {}
+        config["SERVER"]["path"] = str(Path(ctx.obj["sd32"]).resolve())
+    if ctx.obj["gdb"]:
+        if "CLIENT" not in config:
+            config["CLIENT"] = {}
+        config["CLIENT"]["path"] = str(Path(ctx.obj["gdb"]).resolve())
+    with Path(ctx.obj["config"]).open("w", encoding="utf-8") as fid:
         config.write(fid)

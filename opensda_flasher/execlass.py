@@ -1,40 +1,35 @@
 """Base class for executables."""
-from .config import read_config
+
+from __future__ import annotations
+
+from abc import ABC, abstractmethod
+from configparser import ConfigParser
+from subprocess import Popen
+
+from opensda_flasher.config import read_config
+from opensda_flasher.processutil import terminate_popen
 
 
-class ExeClass:
-    """Base class for Server and Client exe classes.
+class ExeClass(ABC):
+    """Base class for Server and Client exe classes."""
 
-    Paramemters:
-        config: ConfigParser configuration object.
-    """
+    def __init__(self, config: ConfigParser | None = None) -> None:
+        self.config = read_config() if config is None else config
+        self.process: Popen[str] | None = None
 
-    def __init__(self, config=None):
-        """Exe Class init."""
-        if config is None:
-            self.config = read_config()
-        else:
-            self.config = config
-        self.process = None
-
-    def __del__(self):
-        """Exe Class destructor."""
+    def __del__(self) -> None:
         if self.process is not None:
             try:
-                self.process.kill()
-            except BaseException:
+                terminate_popen(self.process)
+            except Exception:
                 pass
 
     @property
-    def executable(self):
-        """Not Implemented."""
-        raise NotImplementedError
+    @abstractmethod
+    def executable(self) -> str:
+        """Resolved executable path."""
 
     @property
-    def cmd(self):
-        """Not Implemented."""
-        raise NotImplementedError
-
-    def launch(self):
-        """Not Implemented."""
-        raise NotImplementedError
+    @abstractmethod
+    def cmd(self) -> list[str]:
+        """Argv used to launch the executable."""

@@ -1,0 +1,475 @@
+[DOCUMENT]
+TITLE: OpenSDA Flasher Requirements
+UID: OSF-DOC
+VERSION: 0.5.0
+DATE: 2026-09-20
+
+[TEXT]
+STATEMENT: >>>
+This document specifies the must-implement behavior of opensda_flasher
+(osf): a Click command-line tool that programs NXP DEVKIT-MPC57xx boards
+through PEMicro pegdbserver_power_console and powerpc-eabivle-gdb.
+
+Command lines and GDB monitor sequences shall come from the official
+S32 Design Studio for Power Architecture 2.1 install
+(/opt/S32PA/, PEMicro plugin com.pemicro.debug.gdbjtag.ppc_1.8.7.201906071634)
+and pegdbserver_power_console -help, not from Windows Task Manager captures.
+<<<
+
+[[SECTION]]
+TITLE: CLI
+
+[REQUIREMENT]
+UID: OSF-CLI-001
+TITLE: Click command group
+STATEMENT: >>>
+The tool shall expose a Click command group as the user interface,
+invoked as osf, opensda_flasher, or python -m opensda_flasher.
+Invoking the group with no subcommand shall print help and exit
+successfully.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-002
+TITLE: Group configuration option
+STATEMENT: >>>
+The Click group shall accept -c / --config PATH with default osf.ini.
+The path shall be resolved to an absolute path and used as the local
+configuration file for the invocation.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-003
+TITLE: Optional pegdbserver path
+STATEMENT: >>>
+The Click group shall accept an optional --sd32 PATH that points at
+pegdbserver_power_console.
+
+If PATH is a file, the tool shall use that file as the server executable.
+If PATH is a directory, the tool shall use pegdbserver_power_console
+(or pegdbserver_power_console.exe on Windows) under that directory.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-004
+TITLE: Optional GDB path
+STATEMENT: >>>
+The Click group shall accept an optional --gdb PATH that points at the
+Power Architecture GDB client (powerpc-eabivle-gdb).
+
+If PATH is a file, the tool shall use that file as the GDB executable.
+If PATH is a directory, the tool shall use powerpc-eabivle-gdb
+(or powerpc-eabivle-gdb.exe on Windows) under that directory.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-005
+TITLE: Flash command
+STATEMENT: >>>
+The group shall provide a flash command that programs one or more ELF
+files into on-chip flash. ELF paths shall be Click Path arguments with
+exists=True and nargs=-1. If no ELF is given on the command line, the
+tool shall use ELF paths from the configuration FLASH section.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-006
+TITLE: Debug command
+STATEMENT: >>>
+The group shall provide a debug command that loads one or more ELF
+files for a RAM debug session, then continues execution until the user
+interrupts the session.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-007
+TITLE: Ports command
+STATEMENT: >>>
+The group shall provide a ports command that runs pegdbserver with the
+official -showhardware flag and prints the detected hardware/ports.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-008
+TITLE: Devices command
+STATEMENT: >>>
+The group shall provide a devices command that runs pegdbserver with
+the official -devicelist flag and prints the valid device names.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-009
+TITLE: Kill command
+STATEMENT: >>>
+The group shall provide a kill command that terminates running
+pegdbserver_power_console processes started for this tool or leftover
+instances of the same executable name.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-010
+TITLE: Init command
+STATEMENT: >>>
+The group shall provide an init command that writes the resolved
+configuration to the --config path. Optional ELF arguments shall be
+stored in the FLASH section as elf0, elf1, ...
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-011
+TITLE: Click errors
+STATEMENT: >>>
+Missing ELF inputs, missing executables, server launch failures, and
+flash or verify failures shall be reported with click.ClickException
+or click.UsageError. The tool shall not raise bare Exception for
+user-facing CLI failures.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CLI-012
+TITLE: Package command
+STATEMENT: >>>
+The group shall provide a package command that writes a zip of the
+binaries required to flash without a full S32 Design Studio install:
+pegdbserver_power_console, the sibling gdi algorithm tree,
+powerpc-eabivle-gdb, and that GDB's linux_support libraries so its
+$ORIGIN rpath still resolves. When the resolved server lives in an S32DS
+lin or win32 plugin directory, both host trees that are present
+shall be included. The zip shall contain a README with the --sd32
+and --gdb invocation.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Tool Discovery
+
+[REQUIREMENT]
+UID: OSF-DISC-001
+TITLE: Path resolution precedence
+STATEMENT: >>>
+Executable resolution shall use this precedence, highest first:
+
+1. CLI --sd32 / --gdb
+2. Local or home INI values that name an explicit executable path
+3. PATH lookup of the official executable basename
+<<<
+
+[REQUIREMENT]
+UID: OSF-DISC-002
+TITLE: Default server basename
+STATEMENT: >>>
+When --sd32 is omitted and no explicit server path is configured, the
+tool shall resolve pegdbserver_power_console on POSIX and
+pegdbserver_power_console.exe on Windows via PATH.
+<<<
+
+[REQUIREMENT]
+UID: OSF-DISC-003
+TITLE: Default GDB basename
+STATEMENT: >>>
+When --gdb is omitted and no explicit GDB path is configured, the
+tool shall resolve powerpc-eabivle-gdb on POSIX and
+powerpc-eabivle-gdb.exe on Windows via PATH.
+<<<
+
+[REQUIREMENT]
+UID: OSF-DISC-004
+TITLE: Missing executable error
+STATEMENT: >>>
+If a required executable cannot be resolved, the tool shall fail with
+a Click error that names the missing tool and how to supply --sd32
+or --gdb.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Server Invocation
+
+[REQUIREMENT]
+UID: OSF-SRV-001
+TITLE: Official flash server argv
+STATEMENT: >>>
+A flash or debug server launch shall invoke pegdbserver_power_console
+with this official argument set parsed from S32DS 2.1 / PEMicro 1.8.7
+-help and OpenSDA launch configurations:
+
+-startserver
+-singlesession
+-interface=OPENSDA
+-device=<device>
+-serverport=<port>
+-speed=<khz>
+-port=<hardware>
+-corenum=<core>
+
+The default device shall be MPC5744P, server port 7224, speed 5000,
+hardware port USB1, and core 0.
+<<<
+
+[REQUIREMENT]
+UID: OSF-SRV-002
+TITLE: Do not invent pcpfile
+STATEMENT: >>>
+The tool shall not add -pcpfile unless the user or configuration
+explicitly requests an alternate flash algorithm. Device-name
+selection is the official default.
+<<<
+
+[REQUIREMENT]
+UID: OSF-SRV-003
+TITLE: Show hardware argv
+STATEMENT: >>>
+The ports command shall invoke the resolved server as
+<server> -showhardware and shall not start a GDB listen session.
+<<<
+
+[REQUIREMENT]
+UID: OSF-SRV-004
+TITLE: Device list argv
+STATEMENT: >>>
+The devices command shall invoke the resolved server as
+<server> -devicelist and shall not start a GDB listen session.
+<<<
+
+[REQUIREMENT]
+UID: OSF-SRV-005
+TITLE: Server ready signal
+STATEMENT: >>>
+After launching the server for flash or debug, the tool shall wait
+until pegdbserver prints All Servers Running, then proceed to start
+the GDB client. If the process exits before that message, the tool
+shall fail with a Click error naming the executable.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: GDB Client Invocation
+
+[REQUIREMENT]
+UID: OSF-GDB-001
+TITLE: Official GDB argv
+STATEMENT: >>>
+The GDB client shall be invoked with the official PEMicro plugin
+flags:
+
+--interpreter=mi2
+--nx
+
+plus a command file (--command=FILE or -x FILE) containing the
+S32DS launch-file command sequence.
+<<<
+
+[REQUIREMENT]
+UID: OSF-GDB-002
+TITLE: Official pre-connect commands
+STATEMENT: >>>
+The GDB command file shall start with the S32DS
+gdbClientOtherCommands:
+
+set mem inaccessible-by-default off
+set tcp auto-retry on
+set tcp connect-timeout 240
+set remotetimeout 60
+<<<
+
+[REQUIREMENT]
+UID: OSF-GDB-003
+TITLE: Official connect and monitor commands
+STATEMENT: >>>
+After the pre-connect commands the GDB command file shall:
+
+target remote localhost:<serverport>
+monitor preserve1 0
+monitor selectcore <corenum>
+set architecture powerpc:vle
+<<<
+
+[REQUIREMENT]
+UID: OSF-GDB-004
+TITLE: Load each ELF
+STATEMENT: >>>
+The GDB command file shall issue load "<elf>" for each ELF in order.
+Windows paths shall escape backslashes.
+<<<
+
+[REQUIREMENT]
+UID: OSF-GDB-005
+TITLE: Verify after each flash load
+STATEMENT: >>>
+Flash verification shall use the PEMicro server's programming verify,
+not GDB compare-sections. compare-sections reports every section
+mismatched on this target even when the server CRC check succeeds.
+The tool shall watch pegdbserver stdout during load and print
+Verify flash ... ok when the server reports
+Checksum Verification Successful or Application verified in memory.
+A failed or missing server verify shall fail the flash command.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Flash and Debug Sequences
+
+[REQUIREMENT]
+UID: OSF-SEQ-001
+TITLE: Flash sequence
+STATEMENT: >>>
+flash shall launch the server, run the GDB sequence, load each ELF,
+issue monitor _reset, quit GDB, then stop the server. During load the
+tool shall report the PEMicro CRC verify result.
+
+By default the command shall print stage lines as the session proceeds,
+including the detected board, flashing, and verify flash. Download
+progress shall be shown with a tqdm bar driven by GDB/MI +download
+records. The raw MI transcript shall be kept off stdout unless the
+flash or verify fails.
+<<<
+
+[REQUIREMENT]
+UID: OSF-SEQ-002
+TITLE: Debug sequence
+STATEMENT: >>>
+debug shall launch the server, run the GDB sequence, load each ELF,
+issue continue, and leave the session running until the user
+interrupts it. After interrupt the tool shall stop GDB and the server.
+<<<
+
+[REQUIREMENT]
+UID: OSF-SEQ-003
+TITLE: ELF source
+STATEMENT: >>>
+If the command line supplies one or more ELF paths, those paths shall
+be used. Otherwise ELF paths shall come from the configuration FLASH
+section. Relative ELF paths from the configuration shall be resolved
+relative to the configuration file directory. If neither source
+provides an ELF, the command shall fail with a Click usage error.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Process Lifecycle
+
+[REQUIREMENT]
+UID: OSF-PROC-001
+TITLE: Cross-platform kill
+STATEMENT: >>>
+Stopping the server shall not use taskkill. The tool shall terminate
+the launched server process when it owns one, and shall also terminate
+leftover processes whose executable basename is pegdbserver_power_console
+or pegdbserver_power_console.exe, using a POSIX or Windows API
+appropriate to the host.
+<<<
+
+[REQUIREMENT]
+UID: OSF-PROC-002
+TITLE: Owned process cleanup
+STATEMENT: >>>
+Destroying a Server or Client object shall attempt to terminate any
+process it still owns.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Configuration and Precedence
+
+[REQUIREMENT]
+UID: OSF-CFG-001
+TITLE: Configuration file stack
+STATEMENT: >>>
+The tool shall read configuration, when present, in this order:
+
+1. packaged opensda_flasher.ini
+2. ~/.opensda_flasher.ini
+3. the --config file (default osf.ini)
+
+Later files override earlier keys. Missing files are skipped.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CFG-002
+TITLE: Default device settings
+STATEMENT: >>>
+The packaged default configuration shall target S32 Design Studio for
+Power Architecture 2.1 / PEMicro plugin 1.8.7 values:
+
+device MPC5744P
+port USB1
+speed 5000
+serverport 7224
+corenum 0
+interface OPENSDA
+
+It shall not require a Windows S32DS 1.2 ROOT path to operate when
+--sd32, --gdb, or PATH provide the executables.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CFG-003
+TITLE: Packaged INI is versioned
+STATEMENT: >>>
+The packaged default INI shall be tracked in the repository. The
+gitignore rule for *.ini shall not hide opensda_flasher/opensda_flasher.ini.
+<<<
+
+[REQUIREMENT]
+UID: OSF-CFG-004
+TITLE: CLI overrides INI
+STATEMENT: >>>
+--sd32 and --gdb shall override any executable path from configuration
+for that invocation.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Errors and Exit Codes
+
+[REQUIREMENT]
+UID: OSF-ERR-001
+TITLE: User errors are Click errors
+STATEMENT: >>>
+User-correctable failures (missing ELF, missing executable, server
+exited before ready) shall be raised as Click exceptions so the
+process exits non-zero with a concise message on stderr.
+<<<
+
+[REQUIREMENT]
+UID: OSF-ERR-002
+TITLE: Server already running
+STATEMENT: >>>
+If pegdbserver exits before All Servers Running, the error message
+shall name the resolved executable and state that another instance
+may already be running.
+<<<
+
+[[/SECTION]]
+
+[[SECTION]]
+TITLE: Platform Behavior
+
+[REQUIREMENT]
+UID: OSF-PLAT-001
+TITLE: Linux is a first-class host
+STATEMENT: >>>
+The tool shall run on Linux using the S32DS 2.1 Linux plugin layout
+and POSIX process control. Windows remains supported via .exe
+basenames and Windows process termination, but Linux shall not depend
+on taskkill or Cross_Tools paths.
+<<<
+
+[REQUIREMENT]
+UID: OSF-PLAT-002
+TITLE: Official command source
+STATEMENT: >>>
+Server flags and GDB commands shall be constructed in one module from
+the captured PEMicro -help text and S32DS launch/plugin sequences.
+The implementation shall not reconstruct argv from historical Windows
+Task Manager greps.
+<<<
+
+[[/SECTION]]

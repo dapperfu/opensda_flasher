@@ -1,3 +1,10 @@
+P&E GDB Server for Power devices, Version 7.34.00.00
+Copyright 2018, P&E Microcomputer Systems Inc, All rights reserved
+
+Captured from:
+/opt/S32PA/eclipse/plugins/com.pemicro.debug.gdbjtag.ppc_1.8.7.201906071634/lin/pegdbserver_power_console -help
+
+List of valid parameters
 -devicelist : Displays valid device name list and terminates
 -device=n : Specify the device name being debugged
 -startserver : Start the server listening for a connection from GDB
@@ -17,3 +24,42 @@
 -configfile=config.ini : Specify an ini file to read settings from.
 -corenum : Sets current device core. (defaults to 0)
 -gdbmiport=n : Enables GDB/MI interface, using port number n
+-kernel=OS : Enables kernel aware debugging for the specified OS. (Eg. freertos)
+-uncensorpassword=n : Attempts to uncensor processor with password n (hexadecimal)
+-streamingport=n : Enables Streaming Port, using port number n
+
+Example of a GDB Server Launch :
+
+pegdbserver_console  -startserver -device=Freescale_KL2x_KL25Z128M4
+
+Official OpenSDA flash argv constructed by
+com.pemicro.debug.gdbjtag.ppc TabDebugger.getGdbServerCommandLineArray
+(plugin 1.8.7.201906071634), plus -corenum from -help:
+
+pegdbserver_power_console
+  -device=MPC5744P
+  -startserver
+  -singlesession
+  -serverport=7224
+  -interface=OPENSDA
+  -speed=5000
+  -port=USB1
+  -corenum=0
+
+Official GDB client flags from TabDebugger.getGdbClientCommandLineArray:
+
+powerpc-eabivle-gdb --interpreter=mi2 --nx
+
+Official GDB monitor / launch commands from ConfigurationAttributes.class,
+FinalLaunchSequence.class, and S32DS .launch gdbClientOtherCommands:
+
+set mem inaccessible-by-default off
+set tcp auto-retry on
+set tcp connect-timeout 240
+set remotetimeout 60
+target remote localhost:7224
+monitor preserve1 0
+monitor selectcore 0
+set architecture powerpc:vle
+load "<elf>"
+monitor _reset

@@ -102,3 +102,4 @@ ENV/
 
 # Config files
 *.ini
+!opensda_flasher/opensda_flasher.ini

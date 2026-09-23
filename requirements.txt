@@ -1,5 +1,0 @@
-delegator.py
-jinja2
-configparser
-click
-tqdm
